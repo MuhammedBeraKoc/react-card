@@ -1,0 +1,77 @@
+@use '../../styles/basics' as b
+@use '../../styles/anim' as anim
+
+$card-border-radius: 6px
+$card-button-border-radius: 2px
+
+.card
+    font-size: b.$font-size-small
+    padding: b.$padding-medium
+    border-radius: $card-border-radius
+    width: 280px
+    box-shadow: 0 4px 8px 4px rgba(black, 0.03)
+
+    & .title
+        font-size: b.$font-size-large
+        margin-bottom: b.$margin-small
+    
+    & .content
+        margin-bottom: b.$margin-large
+    
+    & .button
+        user-select: none
+        display: inline-block
+        border-radius: $card-button-border-radius
+        text-transform: uppercase
+
+.light
+    background-color: b.$light-color-background
+
+    .title
+        color: b.$light-text-color
+    
+    .content
+        color: b.$light-text-color-light
+    
+    .button
+        @include anim.default-transition
+        color: white
+        background-color: b.$light-color-primary-light
+        border: 1px solid b.$light-color-primary
+        padding: b.$padding-small b.$padding-medium
+    
+    .button:hover
+        cursor: pointer
+        background-color: b.$light-color-primary
+
+.dark
+    background-color: b.$dark-color-background
+
+    .title
+        color: b.$dark-text-color
+    
+    .content
+        color: b.$dark-text-color-light
+    
+    .button
+        @include anim.default-transition
+        color: white
+        background-color: b.$dark-color-primary-light
+        border: 1px solid b.$dark-color-primary
+        padding: b.$padding-small b.$padding-medium
+    
+    .button:hover
+        cursor: pointer
+        background-color: b.$dark-color-primary
+
+.green
+    .button
+        @include anim.default-transition
+        color: white
+        background-color: b.$light-green-color-primary-light
+        border: 1px solid b.$light-green-color-primary
+        padding: b.$padding-small b.$padding-medium
+    
+    .button:hover
+        cursor: pointer
+        background-color: b.$light-green-color-primary

@@ -1,0 +1,18 @@
+@use '../../styles/basics' as b
+@use '../../styles/anim'
+
+.selector
+    margin-top: b.$margin-large
+    @include b.centerItemsChildren
+
+    & .choice
+        user-select: none
+        background-color: white
+        font-size: b.$font-size-normal
+        padding: b.$padding-small b.$padding-medium
+        @include anim.default-transition
+    
+    & .choice:hover
+        cursor: pointer
+        background-color: b.$light-color-primary
+        color: white

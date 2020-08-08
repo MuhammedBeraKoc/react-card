@@ -1,0 +1,12 @@
+@use '../styles/basics' as b
+@import url(https://fonts.googleapis.com/css?family=Varela+Round)
+
+$varela-round: 'Varela Round', serif
+
+#App
+    @at-root body
+        font-family: $varela-round
+        margin: 0
+    height: 100vh
+    background-color: b.$color-background
+    @include b.centerItemsChildren(column)

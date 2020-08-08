@@ -1,0 +1,5 @@
+@mixin transition($targets, $duration, $motion)
+    transition: #{$targets} #{$duration}s #{$motion}
+
+@mixin default-transition
+    @include transition(all, 0.2, ease-in-out)
