@@ -10,6 +10,8 @@ type State = {
 }
 
 export default class Main extends Component<Props, State> {
+    setTheme: (string) => void
+
     constructor(props: Props) {
         super(props)
         this.state = {

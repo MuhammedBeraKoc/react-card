@@ -5,16 +5,26 @@ import Selector from './pure/Selector'
 import Main from './Main'
 import Footer from './Footer'
 
-export default class App extends Component {
-    constructor(props) {
+type Props = {}
+
+type State = {
+    setTheme: (s: string) => void
+}
+
+export default class App extends Component<Props, State> {
+    mainRef: (main: Main | null) => void
+
+    constructor(props: Props) {
         super(props)
         this.state = {
-            setTheme: () => {}
+            setTheme: (s: string) => {}
         }
-        this.mainRef = (main: Main) => {
-            this.setState({
-                setTheme: main.setTheme
-            })
+        this.mainRef = (main: Main | null) => {
+            if (main instanceof Main) {
+                this.setState({
+                    setTheme: main.setTheme
+                })
+            }
         }
     }
 
@@ -22,7 +32,7 @@ export default class App extends Component {
         return (
             <div id="App">
                 <Selector choices={['light', 'light green', 'dark']} setTheme={this.state.setTheme} />
-                <Main ref={this.mainRef} theme={this.state.theme} />
+                <Main ref={this.mainRef} />
                 <Footer />
             </div>
         )
