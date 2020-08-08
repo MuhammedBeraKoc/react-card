@@ -1,2 +1,2 @@
 # react-card
-Fully customisable React card components
+Fully customisable React card component
